@@ -16,6 +16,9 @@
         {
             "label": "make",
             "type": "shell",
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
             "command": "make -j 8",
             "group": {
                 "kind": "build",
