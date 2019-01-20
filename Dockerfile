@@ -18,9 +18,9 @@ COPY . /usr/src/TestCMake
 WORKDIR /usr/src/TestCMake/build
 
 # Use GCC to compile the Test.cpp source file
-RUN rm -r *
-RUN cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug ..
-RUN make -j 8
+RUN rm -r * && \
+  cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug .. && \
+  make -j 8
 
 # Run the program output from the previous step
 CMD ["./testcmake"]
